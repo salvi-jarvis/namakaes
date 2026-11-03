@@ -1,5 +1,6 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
+import { AppShell } from "@/components/nexo/AppShell";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -13,7 +14,7 @@ export const Route = createRootRoute({
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/manifest.webmanifest" },
-      { rel: "icon", href: "/favicon.ico" },
+      { rel: "icon", href: "/icons/icon.svg", type: "image/svg+xml" },
       { rel: "apple-touch-icon", href: "/icons/apple-touch-icon.png" },
     ],
   }),
@@ -25,7 +26,9 @@ function RootDocument() {
     <html lang="es">
       <head><HeadContent /></head>
       <body>
-        <Outlet />
+        <AppShell>
+          <Outlet />
+        </AppShell>
         <Scripts />
       </body>
     </html>
