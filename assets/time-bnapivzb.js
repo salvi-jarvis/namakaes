@@ -1,0 +1,1 @@
+import{Ht as e,Ut as t,x as n}from"./index-CFiKnz_q.js";var r=t(e(),1);function i(){let[e,t]=(0,r.useState)(()=>n());return(0,r.useEffect)(()=>{let e=setInterval(()=>t(n()),3e4);return()=>clearInterval(e)},[]),e}export{i as t};

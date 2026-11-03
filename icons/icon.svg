@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Nā Maka">
+  <rect width="512" height="512" rx="112" fill="#3d5ccf"/>
+  <path d="M84 256C150 160 362 160 428 256C362 352 150 352 84 256Z" fill="#fff"/>
+  <circle cx="256" cy="256" r="66" fill="#14203f"/>
+  <circle cx="276" cy="236" r="19" fill="#fff"/>
+</svg>

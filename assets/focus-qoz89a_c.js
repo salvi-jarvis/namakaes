@@ -1,0 +1,1 @@
+var e=[15,25,45];function t(e,t){let n=t?e.filter(e=>e.date>=t):e,r=new Map;for(let e of n){let t=r.get(e.subjectId)??{minutes:0,sessions:0};t.minutes+=e.minutes,t.sessions++,r.set(e.subjectId,t)}return[...r.entries()].map(([e,t])=>({subjectId:e,...t})).sort((e,t)=>t.minutes-e.minutes)}var n=(e,t)=>e.filter(e=>e.date===t).reduce((e,t)=>e+t.minutes,0);export{t as n,n as r,e as t};
