@@ -1,5 +1,5 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import appCss from "../styles.css?url";
 import { AppShell } from "@/components/nexo/AppShell";
 
 export const Route = createRootRoute({
@@ -8,38 +8,27 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Nā Maka — Centro de estudios" },
-      {
-        name: "description",
-        content: "Organiza tus tareas, exámenes y sesiones de estudio.",
-      },
+      { name: "theme-color", content: "#3d5ccf" },
+      { name: "description", content: "Centro de estudios personal: tareas, exámenes y planificación." },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/manifest.webmanifest" },
       { rel: "icon", href: "/icons/icon.svg", type: "image/svg+xml" },
       { rel: "apple-touch-icon", href: "/icons/apple-touch-icon.png" },
     ],
   }),
-  component: RootComponent,
+  component: RootDocument,
 });
 
-function RootComponent() {
-  return (
-    <RootDocument>
-      <AppShell>
-        <Outlet />
-      </AppShell>
-    </RootDocument>
-  );
-}
-
-function RootDocument({ children }: { children: ReactNode }) {
+function RootDocument() {
   return (
     <html lang="es">
-      <head>
-        <HeadContent />
-      </head>
+      <head><HeadContent /></head>
       <body>
-        {children}
+        <AppShell>
+          <Outlet />
+        </AppShell>
         <Scripts />
       </body>
     </html>
